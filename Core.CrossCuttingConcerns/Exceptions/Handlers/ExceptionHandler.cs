@@ -13,9 +13,11 @@ namespace Core.CrossCuttingConcerns.Exceptions.Handlers
             exception switch
             {
                 BusinessException businessException => HandleException(businessException),
+                ValidationException validationException => HandleException(validationException),
                 _ => HandleException(exception),
             };
         protected abstract Task HandleException(BusinessException businessException); //business ise bu çalışacak değil ise alt kısımdaki 
+        protected abstract Task HandleException(ValidationException validationException); // ise bu çalışacak değil ise alt kısımdaki 
         protected abstract Task HandleException(Exception exception);
 
     }
