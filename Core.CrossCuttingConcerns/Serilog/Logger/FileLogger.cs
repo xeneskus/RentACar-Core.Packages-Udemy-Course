@@ -12,7 +12,8 @@ public class FileLogger : LoggerServiceBase
     public FileLogger(IConfiguration configuration)
     {
         _configuration = configuration;
-        FileLogConfiguration logConfig = configuration.GetSection("SeriLogConfigurations:FileLogConfiguration").Get<FileLogConfiguration>()// yolu al oradaki alanları bu nesneye maple
+        FileLogConfiguration logConfig =
+            configuration.GetSection("SeriLogConfigurations:FileLogConfiguration").Get<FileLogConfiguration>()// yolu al oradaki alanları bu nesneye maple
         ?? throw new Exception(SerilogMessages.NullOptionsMessage);// eğer bu alan yoksa
 
    

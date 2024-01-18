@@ -10,7 +10,7 @@ public abstract class LoggerServiceBase
     {
         Logger = null;
     }
-    public LoggerServiceBase(ILogger logger)
+    protected LoggerServiceBase(ILogger logger)
     {
         Logger = logger;
 
