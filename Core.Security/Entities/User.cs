@@ -12,6 +12,9 @@ public class User : Entity<int>
     public bool Status { get; set; }
 
     public virtual ICollection<UserOpertaionClaim> UserOpertaionClaims { get; set; } = null!;
+    public virtual ICollection<RefreshToken> RefreshTokens { get; set; } = null!;
+    public virtual ICollection<OtpAuthenticator> OtpAuthenticator { get; set; } = null!;
+    public virtual ICollection<EmailAuthonticator> EmailAuthonticator { get; set; } = null!;
     public User()
     {
         FirstName = string.Empty; 
