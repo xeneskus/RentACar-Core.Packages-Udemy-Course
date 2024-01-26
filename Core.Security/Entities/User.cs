@@ -1,4 +1,5 @@
 ﻿using Core.Persistence.Repositories;
+using Core.Security.Enums;
 
 namespace Core.Security.Entities;
 
@@ -10,11 +11,12 @@ public class User : Entity<int>
     public byte[] PasswordSalt { get; set; }
     public byte[] PasswordHash { get; set; }
     public bool Status { get; set; }
+    public AuthenticatorType AuthenticatorType { get; set; }
 
-    public virtual ICollection<UserOpertaionClaim> UserOpertaionClaims { get; set; } = null!;
+    public virtual ICollection<UserOperationClaim> UserOperationClaims { get; set; } = null!;
     public virtual ICollection<RefreshToken> RefreshTokens { get; set; } = null!;
-    public virtual ICollection<OtpAuthenticator> OtpAuthenticator { get; set; } = null!;
-    public virtual ICollection<EmailAuthonticator> EmailAuthonticator { get; set; } = null!;
+    public virtual ICollection<OtpAuthenticator> OtpAuthenticators { get; set; } = null!;
+    public virtual ICollection<EmailAuthenticator> EmailAuthenticators { get; set; } = null!; 
     public User()
     {
         FirstName = string.Empty; 
